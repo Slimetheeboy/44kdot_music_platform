@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>44kdot Records</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1e1e1e;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 50px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #00ff99;
+    }
+    main {
+      padding: 20px;
+    }
+    .upload-section, .login-section, .about {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+    input, button, textarea {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: #00ff99;
+      color: #000;
+      cursor: pointer;
+    }
+    .track-card {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    audio, video {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="FB_IMG_17492864411581457.jpg" alt="44kdot Logo" />
+    <h1>44kdot Records</h1>
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>🎤 About 44kdot</h2>
+      <p>All about being authentic and chasing life moments — the truth about music.</p>
+    </section>
+
+    <section class="login-section">
+      <h2>Admin Login</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section class="upload-section">
+      <h2>Upload a Track</h2>
+      <form id="uploadForm">
+        <input type="text" id="title" placeholder="Track Title" required />
+        <input type="text" id="artist" placeholder="Artist Name" required />
+        <input type="file" id="audioFile" accept="audio/*" required />
+        <input type="file" id="coverImage" accept="image/*" required />
+        <input type="file" id="videoFile" accept="video/*" />
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>🔥 Latest Releases</h2>
+      <div id="track-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="upload.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
